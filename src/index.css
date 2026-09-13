@@ -1,0 +1,279 @@
+/* =========================
+   Global
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #f8f9ff, #e8f0ff);
+  color: #222;
+}
+
+/* =========================
+   Main Section
+========================= */
+
+section {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+  padding: 40px 0;
+}
+
+/* =========================
+   Heading
+========================= */
+
+header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+header h1 {
+  font-size: 45px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #2d3436;
+}
+
+/* =========================
+   Pokemon Cards Grid
+========================= */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+
+  list-style: none;
+  padding: 0;
+}
+
+/* =========================
+   Pokemon Card
+========================= */
+
+.pokemon-card {
+  position: relative;
+
+  background: white;
+  border-radius: 25px;
+
+  padding: 25px;
+
+  text-align: center;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  transition: all 0.3s ease;
+
+  overflow: hidden;
+}
+
+/* Top decoration */
+
+.pokemon-card::before {
+  content: "";
+  position: absolute;
+
+  top: -60px;
+  right: -60px;
+
+  width: 150px;
+  height: 150px;
+
+  background: #e8f0ff;
+
+  border-radius: 50%;
+
+  z-index: 0;
+}
+
+/* Hover */
+
+.pokemon-card:hover {
+  transform: translateY(-10px);
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================
+   Image
+========================= */
+
+.pokemon-card figure {
+  position: relative;
+  z-index: 1;
+
+  margin: 10px 0 20px;
+}
+
+.pokemon-image {
+  width: 170px;
+  height: 170px;
+
+  object-fit: contain;
+
+  transition: transform 0.3s ease;
+}
+
+/* Image hover */
+
+.pokemon-card:hover .pokemon-image {
+  transform: scale(1.1);
+}
+
+/* =========================
+   Pokemon Name
+========================= */
+
+.pokemon-name {
+  position: relative;
+  z-index: 1;
+
+  font-size: 27px;
+
+  text-transform: capitalize;
+
+  margin-bottom: 15px;
+
+  color: #2d3436;
+}
+
+/* =========================
+   Pokemon Type
+========================= */
+
+.pokemon-types {
+  position: relative;
+  z-index: 1;
+
+  margin-bottom: 20px;
+}
+
+.pokemon-types p {
+  display: inline-block;
+
+  padding: 7px 15px;
+
+  border-radius: 20px;
+
+  background: #eef2ff;
+
+  color: #4c5bd4;
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+  text-transform: capitalize;
+}
+
+/* =========================
+   Pokemon Details
+========================= */
+
+.pokemon-card > div:last-child {
+  position: relative;
+  z-index: 1;
+
+  background: #f8f9fa;
+
+  border-radius: 15px;
+
+  padding: 12px 15px;
+
+  text-align: left;
+}
+
+.pokemon-card > div:last-child p {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 8px 0;
+
+  border-bottom: 1px solid #e5e5e5;
+
+  font-size: 15px;
+
+  text-transform: capitalize;
+}
+
+/* Remove border from last item */
+
+.pokemon-card > div:last-child p:last-child {
+  border-bottom: none;
+}
+
+/* Labels */
+
+.pokemon-card span {
+  font-weight: bold;
+
+  color: #555;
+}
+
+/* =========================
+   Loading / Error
+========================= */
+
+section > h2 {
+  text-align: center;
+
+  margin-top: 100px;
+
+  font-size: 30px;
+}
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 1100px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =========================
+   Small Tablet
+========================= */
+
+@media (max-width: 800px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  header h1 {
+    font-size: 38px;
+  }
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 550px) {
+  section {
+    width: 92%;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 30px;
+  }
+
+  .pokemon-image {
+    width: 150px;
+    height: 150px;
+  }
+}
