@@ -24,7 +24,45 @@ section {
   margin: auto;
   padding: 40px 0;
 }
+/* Search Container */
 
+.pokemon-search {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+/* Search Input */
+
+.pokemon-search input {
+  width: 100%;
+  max-width: 450px;
+
+  padding: 12px 20px;
+
+  font-size: 16px;
+
+  border: 2px solid #ddd;
+  border-radius: 30px;
+
+  outline: none;
+
+  transition: all 0.3s ease;
+}
+
+/* Focus Effect */
+
+.pokemon-search input:focus {
+  border-color: #4c5bd4;
+
+  box-shadow: 0 0 10px rgba(76, 91, 212, 0.3);
+}
+
+/* Placeholder */
+
+.pokemon-search input::placeholder {
+  color: #999;
+}
 /* =========================
    Heading
 ========================= */
